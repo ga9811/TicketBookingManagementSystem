@@ -11,10 +11,13 @@
         <ImageBrush ImageSource="/View/ÉãÍ¼Íø_400992592_banner_´ºÌìµÄÓÍ²Ë»¨Ìï£¨·ÇÆóÒµÉÌÓÃ£© - Copy.jpg"/>
     </Window.Background>
     <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <Button x:Name="BookingButton" Content="Booking" HorizontalAlignment="Left" Height="42" Margin="86,116,0,0" VerticalAlignment="Top" Width="144" Background="#FFA909A3" Foreground="#FFFFF0EA" Padding="3,3,3,3" FontSize="18" FontFamily="Imprint MT Shadow" Click="BookingButton_Click"/>
-        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,177,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow"/>
-        <Button x:Name="Admin" Content="Admin" HorizontalAlignment="Left" Height="42" Margin="86,242,0,0" VerticalAlignment="Top" Width="144" Background="#FF50F707" Foreground="#FFF00D0B" FontFamily="Imprint MT Shadow" FontSize="18"/>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Height="42" Margin="86,302,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Foreground="#FFFDFDFD" FontFamily="Imprint MT Shadow" FontSize="18" Background="#FFA909A3" Click="ExitButton_Click"/>
+        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,200,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow"/>
+        <Button x:Name="Admin" Content="Admin" HorizontalAlignment="Left" Height="42" Margin="86,300,0,0" VerticalAlignment="Top" Width="144" Background="#FF50F707" Foreground="#FFF00D0B" FontFamily="Imprint MT Shadow" FontSize="18"/>
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Height="42" Margin="86,378,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Foreground="#FFFDFDFD" FontFamily="Imprint MT Shadow" FontSize="18" Background="#FFA909A3" Click="ExitButton_Click"/>
         <TextBox x:Name="TrainId_textbox" HorizontalAlignment="Left" Height="21" Margin="759,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextChanged="TrainId_textbox_TextChanged"/>
         <Label Content="Departure" HorizontalAlignment="Left" Height="30" Margin="344,22,0,0" VerticalAlignment="Top" Width="62"/>
         <ComboBox x:Name="depBox" SelectedIndex="0" HorizontalAlignment="Left" Height="21" Margin="331,45,0,0" VerticalAlignment="Top" Width="84" Text="Montreal" SelectionChanged="depBox_SelectionChanged">
@@ -48,20 +51,20 @@
         <TextBox x:Name="UserId_textbox" HorizontalAlignment="Left" Height="21" Margin="824,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
         <Label Content="TrainId" HorizontalAlignment="Left" Height="30" Margin="760,22,0,0" VerticalAlignment="Top" Width="71"/>
         <Label Content="UserId" HorizontalAlignment="Left" Height="30" Margin="819,22,0,0" VerticalAlignment="Top" Width="71"/>
-        <DataGrid x:Name="dataGrid" IsReadOnly="False"  HorizontalAlignment="Left" Height="83" Margin="331,148,0,0" VerticalAlignment="Top" Width="523" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged" Background="#FFFDFDFD">
+        <DataGrid x:Name="dataGrid" IsReadOnly="False"  HorizontalAlignment="Left" Height="129" Margin="332,198,0,0" VerticalAlignment="Top" Width="522" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged" Background="{x:Null}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding train_Id}" Width="60"/>
-                <DataGridTextColumn Header="Dep" Binding="{Binding dep_id}"  Width="60"/>
-                <DataGridTextColumn Header="Arr" Binding="{Binding arr_id}" Width="60"/>
+                <DataGridTextColumn Header="Dep" Binding="{Binding depStation}"  Width="60"/>
+                <DataGridTextColumn Header="Arr" Binding="{Binding arrStation}" Width="60"/>
                 <DataGridTextColumn Header="DepTime" Binding="{Binding dep_time}" Width="120" />
                 <DataGridTextColumn Header="ArrTime" Binding="{Binding arr_time}" Width="120"/>
-                <DataGridTextColumn Header="Seat" Binding="{Binding seat_id}" Width="50" />
+                <DataGridTextColumn Header="Seat" Binding="{Binding seatName}" Width="50" />
                 <DataGridTextColumn Header="price" Binding="{Binding price}" Width="60"/>
             </DataGrid.Columns>
 
         </DataGrid>
 
-        <DataGrid x:Name="userDataGrid" HorizontalAlignment="Left" Height="92" Margin="331,231,0,0" VerticalAlignment="Top" Width="349" d:ItemsSource="{Binding}" Background="{x:Null}" SelectionChanged="userDataGrid_SelectionChanged">
+        <DataGrid x:Name="userDataGrid" HorizontalAlignment="Left" Height="92" Margin="331,328,0,0" VerticalAlignment="Top" Width="349" d:ItemsSource="{Binding}" Background="{x:Null}" SelectionChanged="userDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="UserId" Binding="{Binding user_id}" Width="60"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding name}"  Width="60"/>
@@ -72,7 +75,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="usersearchBtn" Content="S/USER" HorizontalAlignment="Left" Margin="828,85,0,0" VerticalAlignment="Top" Background="#FF50F707" Foreground="White" Click="usersearchBtn_Click"/>
-        <TextBox x:Name="updateTrainId" HorizontalAlignment="Left" Height="21" Margin="346,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" TextChanged="TrainId_textbox_TextChanged"/>
+        <TextBox x:Name="updateTrainId" HorizontalAlignment="Left" Height="21" Margin="332,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" TextChanged="TrainId_textbox_TextChanged"/>
+        <TextBox x:Name="depTextBox" HorizontalAlignment="Left" Height="21" Margin="400,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"/>
+        <TextBox x:Name="arrTextBox" HorizontalAlignment="Left" Height="21" Margin="501,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="depTimeTextBox" HorizontalAlignment="Left" Height="21" Margin="603,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="arrTimeTextBox" HorizontalAlignment="Left" Height="21" Margin="740,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
 
 
     </Grid>
