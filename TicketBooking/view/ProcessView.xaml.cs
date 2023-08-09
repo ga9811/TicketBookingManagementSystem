@@ -26,7 +26,7 @@ namespace TicketBookingSystemWPF.View
         {
             InitializeComponent();
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(0.05); // 设置计时器间隔为 1 秒
+            timer.Interval = TimeSpan.FromSeconds(0.05); 
             timer.Tick += Timer_Tick;
 
             Loaded += ProcessView_Loaded;

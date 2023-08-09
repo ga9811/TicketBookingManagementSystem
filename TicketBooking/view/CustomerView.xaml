@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/View/ÉãÍ¼Íø_400992592_banner_´ºÌìµÄÓÍ²Ë»¨Ìï£¨·ÇÆóÒµÉÌÓÃ£© - Copy.jpg" Stretch="Fill" TileMode="None"/>
         </Grid.Background>
         <Button x:Name="BookingButton" Content="Booking" HorizontalAlignment="Left" Height="42" Margin="86,116,0,0" VerticalAlignment="Top" Width="144" Background="#FF50F707" Foreground="#FFF50D0D" Padding="3,3,3,3" FontSize="18" FontFamily="Imprint MT Shadow" Click="BookingButton_Click"/>
-        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,177,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow"/>
+        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,177,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow" Click="UserButton_Click"/>
         <Button x:Name="Admin" Content="Admin" HorizontalAlignment="Left" Height="42" Margin="86,242,0,0" VerticalAlignment="Top" Width="144" Background="#FFA909A3" Foreground="#FFFFFCFC" FontFamily="Imprint MT Shadow" FontSize="18" Click="Admin_Click"/>
         <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Height="42" Margin="86,302,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Foreground="#FFFDFDFD" FontFamily="Imprint MT Shadow" FontSize="18" Background="#FFA909A3" Click="ExitButton_Click"/>
         <ComboBox x:Name="depBox" SelectedIndex="0" HorizontalAlignment="Left" Height="21" Margin="318,45,0,0" VerticalAlignment="Top" Width="95" Text="Montreal" SelectionChanged="depBox_SelectionChanged">
@@ -27,9 +27,9 @@
             <ComboBoxItem Content="Ottawa"/>
         </ComboBox>
         <Label x:Name="LableTo" Content="To" HorizontalAlignment="Left" Height="28" Margin="434,45,0,0" VerticalAlignment="Top" Width="23" RenderTransformOrigin="0.58,0.37"/>
-        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Height="21" Margin="699,45,0,0" VerticalAlignment="Top" Width="60" Background="#FF50F707" Foreground="#FFF50D0D" Padding="3,3,3,3" FontFamily="Imprint MT Shadow" RenderTransformOrigin="0.54,0.935" Click="Search_Click"/>
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Height="21" Margin="699,45,0,0" VerticalAlignment="Top" Width="60" Background="#FF50F707" Foreground="#FFF50D0D" Padding="3,3,3,3" FontFamily="Imprint MT Shadow" RenderTransformOrigin="0.5,0.5" Click="Search_Click"/>
         <DatePicker x:Name="SelectDate" HorizontalAlignment="Left" Height="21" Margin="593,45,0,0" VerticalAlignment="Top" Width="81"/>
-        <DataGrid x:Name="dataGrid" IsReadOnly="False"  HorizontalAlignment="Left" Height="200" Margin="247,100,0,0" VerticalAlignment="Top" Width="624" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged" Background="#FFFDFDFD">
+        <DataGrid x:Name="dataGrid" IsReadOnly="False"  HorizontalAlignment="Left" Height="200" Margin="247,100,0,0" VerticalAlignment="Top" Width="624" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged" Background="{x:Null}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding train_Id}" Width="60"/>
                 <DataGridTextColumn Header="Dep" Binding="{Binding depStation}"  Width="60"/>

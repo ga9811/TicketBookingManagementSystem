@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TicketBookingSystemWPF.DAO;
 using TicketBookingSystemWPF.DModels;
+
 using TicketBookingSystemWPF.Services;
 
 namespace TicketBookingSystemWPF.View
@@ -22,9 +24,12 @@ namespace TicketBookingSystemWPF.View
     public partial class Login : Window
     {
         UserService userService = new UserService();
+        
+       
         public Login()
         {
             InitializeComponent();
+           
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +48,8 @@ namespace TicketBookingSystemWPF.View
             int id = int.Parse(IdTextBox.Text);
             string paw = PasswordBox.Password;
             int userType = ComboBox.SelectedIndex;
+            GlobalData.findUserType = userType;
+            GlobalData.findUserId = id;
           UserInfoModel user =  userService.getUserByIdAndPwd(id, paw, userType);
             
             if (user != null && userType == 0)
@@ -68,6 +75,13 @@ namespace TicketBookingSystemWPF.View
                 PasswordBox.Clear();
 
             }
+        }
+
+        private void RegistButton_Click(object sender, RoutedEventArgs e)
+        {
+            Users users = new Users();
+            users.Show();
+            this.Close();
         }
     }
 }

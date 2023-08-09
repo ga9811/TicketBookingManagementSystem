@@ -17,7 +17,7 @@
         <Label Content="Ticket Booking" HorizontalAlignment="Left" Height="44" Margin="198,52,0,0" VerticalAlignment="Top" Width="234" FontSize="26" HorizontalContentAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Height="24" Margin="169,300,0,0" VerticalAlignment="Top" Width="61" Background="#FF5DF410" Foreground="#FFF00808" RenderTransformOrigin="0.482,1.752" Click="LoginButton_Click"/>
 
-        <Button x:Name="RegistButton" Content="Regist" HorizontalAlignment="Left" Height="24" Margin="286,300,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.449,1.235"/>
+        <Button x:Name="RegistButton" Content="Regist" HorizontalAlignment="Left" Height="24" Margin="286,300,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.449,1.235" Click="RegistButton_Click"/>
         <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Height="24" Margin="398,300,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.458,1.402" Click="ResetButton_Click"/>
         <ComboBox x:Name="ComboBox" SelectedIndex="0" HorizontalAlignment="Left" Height="21" Margin="169,254,0,0" VerticalAlignment="Top" Width="95" Text="Customer">
             <ComboBoxItem Content="Customer"/>
