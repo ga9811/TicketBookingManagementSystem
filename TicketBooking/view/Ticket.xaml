@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicketBookingSystemWPF.View"
         mc:Ignorable="d"
-        Title="Ticket" Height="200" Width="465" WindowStyle="None" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        Title="Ticket" Height="200" Width="465" WindowStyle="None" ResizeMode="NoResize">
     <Window.Background>
         <VisualBrush>
             <VisualBrush.Visual>

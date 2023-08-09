@@ -15,7 +15,7 @@
             <ImageBrush/>
         </Grid.Background>
         <Button x:Name="BookingButton" Content="Booking" HorizontalAlignment="Left" Height="42" Margin="86,116,0,0" VerticalAlignment="Top" Width="144" Background="#FFA909A3" Foreground="#FFFFF0EA" Padding="3,3,3,3" FontSize="18" FontFamily="Imprint MT Shadow" Click="BookingButton_Click"/>
-        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,200,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow" Click="UserButton_Click"/>
+        <Button x:Name="UserButton" Content="User" HorizontalAlignment="Left" Height="42" Margin="86,200,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Background="#FFA909A3" Foreground="White" FontSize="18" FontFamily="Imprint MT Shadow"/>
         <Button x:Name="Admin" Content="Admin" HorizontalAlignment="Left" Height="42" Margin="86,300,0,0" VerticalAlignment="Top" Width="144" Background="#FF50F707" Foreground="#FFF00D0B" FontFamily="Imprint MT Shadow" FontSize="18"/>
         <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Height="42" Margin="86,378,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,2.401" Foreground="#FFFDFDFD" FontFamily="Imprint MT Shadow" FontSize="18" Background="#FFA909A3" Click="ExitButton_Click"/>
         <TextBox x:Name="TrainId_textbox" HorizontalAlignment="Left" Height="21" Margin="759,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextChanged="TrainId_textbox_TextChanged"/>

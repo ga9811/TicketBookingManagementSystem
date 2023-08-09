@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 Entypo (http://www.entypo.com/) is created by Daniel Bruce and released under the Creative Commons, Share Alike/Attribution license.
 
+=======
+Entypo (http://www.entypo.com/) is created by Daniel Bruce and released under the Creative Commons, Share Alike/Attribution license.
+
+>>>>>>> bbd501fed69cd5924b3f5997ffec2f7c6c8ac832
 http://creativecommons.org/licenses/by-sa/3.0/

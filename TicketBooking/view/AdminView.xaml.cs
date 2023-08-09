@@ -62,7 +62,8 @@ namespace TicketBookingSystemWPF.View
 
             CustomerView customerView = new CustomerView();
             customerView.Show();
-            this.Close();
+            AdminView adminView = new AdminView();
+            adminView.Close();
 
         }
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-D9VVUP6;Initial Catalog=TicketBooking;Integrated Security=True");
@@ -183,7 +184,11 @@ namespace TicketBookingSystemWPF.View
 
 
         }
-    
+        private void TrainInfoUpdate()
+        {
+           
+
+        }
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
@@ -354,13 +359,6 @@ namespace TicketBookingSystemWPF.View
         {
             this.Close();
             Environment.Exit(0);
-        }
-
-        private void UserButton_Click(object sender, RoutedEventArgs e)
-        {
-            Users users = new Users();
-            users.Show();
-            this.Close();
         }
     }
 }

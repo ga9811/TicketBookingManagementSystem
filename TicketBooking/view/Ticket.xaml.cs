@@ -14,9 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TicketBookingSystemWPF.Services;
 using System.Windows.Markup;
-using TicketBookingSystemWPF.DAO;
-using TicketBookingSystemWPF.DModels;
-
 
 namespace TicketBookingSystemWPF.View
 {
@@ -25,7 +22,6 @@ namespace TicketBookingSystemWPF.View
     /// </summary>
     public partial class Ticket : Window
     {
-       
         private int bookingId;
         UserService userService = new UserService();
         public Ticket(int bookingId, int train_id, string depStation,
@@ -47,7 +43,6 @@ namespace TicketBookingSystemWPF.View
 
             if (rowsAffected > 0)
             {
-
                 MessageBox.Show("Order Successful, Please Make Payment");
             }
             else

@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using TicketBookingSystemWPF.DModels;
 using TicketBookingSystemWPF.Services;
-using System.Collections.ObjectModel;
-using TicketBookingSystemWPF.DAO;
-
 
 namespace TicketBookingSystemWPF.View
 {
@@ -25,17 +22,13 @@ namespace TicketBookingSystemWPF.View
     /// </summary>
     public partial class CustomerView : Window
     {
-        private ObservableCollection<BookingsInfoModel> Bookings;
+
         private UserService userService;
         private BookingsInfoModel selectedBooking;
-       
         public CustomerView()
         {
             InitializeComponent();
             userService = new UserService();
-
-            
-            dataGrid.ItemsSource = Bookings;
         }
         
 
@@ -46,46 +39,32 @@ namespace TicketBookingSystemWPF.View
 
             depStation = depStation?.Replace("System.Windows.Controls.ComboBoxItem: ", "");
             arrStation = arrStation?.Replace("System.Windows.Controls.ComboBoxItem: ", "");
-            DateTime? SelectedDate = SelectDate.SelectedDate;
+            DateTime SelectedDate = SelectDate.SelectedDate.Value;
             //Console.WriteLine(depStation);
             //Console.WriteLine(arrStation);
             //Console.WriteLine(SelectedDate);
 
             // 执行搜索操作，获取符合条件的票信息
-            if (depStation==arrStation|| SelectedDate ==null)
-            {
-                MessageBox.Show("The Dep And Arr Can't Same or Date Is Missing");
-            }
-            else if (SelectedDate > new DateTime(2023, 07, 06) || SelectedDate < new DateTime(2023, 07, 01))
-            {
-                MessageBox.Show("Please Chose 07-01 to 07-05");
-            }
+            List<BookingsInfoModel> bookings = userService.SearchBookings(depStation, arrStation, SelectedDate);
+                
 
 
-            else {
-                List<BookingsInfoModel> bookings = userService.SearchBookings(depStation, arrStation, SelectedDate.Value);
-                           
-            dataGrid.ItemsSource = bookings; 
-            }
-
-
+            // 将结果绑定到 DataGrid 控件
+            dataGrid.ItemsSource = bookings;
         }
 
         private void Admin_Click(object sender, RoutedEventArgs e)
         {
-            int user_type = GlobalData.findUserType;
-            if (user_type == 0) {
-                MessageBox.Show("Need be Authorited");
-            }else
-            {
-                AdminView adminView = new AdminView();
-                adminView.Show();
-                this.Close();
-            }
-            
+            CustomerView customerView = new CustomerView();
+            customerView.Close();
+            AdminView adminView = new AdminView();
+           adminView.Show();
         }
 
-      
+        private void BookingButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -105,10 +84,6 @@ namespace TicketBookingSystemWPF.View
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedBooking = dataGrid.SelectedItem as BookingsInfoModel;
-            if (selectedBooking == null)
-            {
-                return;
-            }
             int booking_id = selectedBooking.booking_id;
             int train_id = selectedBooking.train_Id;
             string depStation = selectedBooking.depStation;
@@ -120,21 +95,9 @@ namespace TicketBookingSystemWPF.View
 
             Ticket ticketWindow = new Ticket(booking_id,train_id, depStation, arrStation, dep_time, arr_time, seat, price);
 
-            
+            // 显示目标窗口
             ticketWindow.ShowDialog();
 
-        }
-
-        private void UserButton_Click(object sender, RoutedEventArgs e)
-        {
-            Users user = new Users();
-            user.Show();
-            this.Close();
-        }
-
-        private void BookingButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Show();
         }
     }
 }
