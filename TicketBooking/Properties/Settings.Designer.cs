@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TicketBooking.Properties
+namespace TicketBookingSystemWPF.Properties
 {
 
 
