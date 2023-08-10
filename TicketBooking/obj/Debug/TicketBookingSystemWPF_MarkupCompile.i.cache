@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿TicketBookingSystemWPF
 
 
@@ -13,31 +12,9 @@ DEBUG;TRACE
 C:\Users\Bing Yan\Desktop\adesk application\project\TicketBookingSystemWPF\TicketBookingSystemWPF\App.xaml
 10479089625
 
-241398439502
-1691994721683
+25-1371312853
+170-343583190
 Resources\Icons.xaml;Resources\IconsNonShared.xaml;View\AdminView.xaml;View\CustomerView.xaml;View\Id.xaml;View\Login.xaml;View\MainView.xaml;View\ProcessView.xaml;View\Ticket.xaml;View\Users.xaml;
 
-False
+True
 
-=======
-﻿TicketBookingSystemWPF
-
-
-winexe
-C#
-.cs
-C:\Users\Bing Yan\Desktop\adesk application\project\TicketBookingSystemWPF\TicketBookingSystemWPF\obj\Debug\
-TicketBookingSystemWPF
-none
-false
-DEBUG;TRACE
-C:\Users\Bing Yan\Desktop\adesk application\project\TicketBookingSystemWPF\TicketBookingSystemWPF\App.xaml
-8-595845216
-
-21720369018
-168-682857916
-Resources\Icons.xaml;Resources\IconsNonShared.xaml;View\AdminView.xaml;View\CustomerView.xaml;View\Login.xaml;View\MainView.xaml;View\ProcessView.xaml;View\Ticket.xaml;
-
-False
-
->>>>>>> bbd501fed69cd5924b3f5997ffec2f7c6c8ac832

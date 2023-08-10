@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using TicketBookingSystemWPF.DAO;
 using TicketBookingSystemWPF.DModels;
+using Newtonsoft.Json;
 
 using TicketBookingSystemWPF.Services;
 
@@ -24,10 +15,16 @@ namespace TicketBookingSystemWPF.View
     public partial class Login : Window
     {
         UserService userService = new UserService();
-        
-       
+        HttpClient httpClient = new HttpClient();
+
         public Login()
         {
+            httpClient.BaseAddress = new Uri("https://localhost:7011/api/Login/");
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
+                );
+
             InitializeComponent();
            
         }
@@ -43,16 +40,21 @@ namespace TicketBookingSystemWPF.View
             PasswordBox.Clear();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(IdTextBox.Text);
-            string paw = PasswordBox.Password;
-            int userType = ComboBox.SelectedIndex;
-            GlobalData.findUserType = userType;
-            GlobalData.findUserId = id;
-          UserInfoModel user =  userService.getUserByIdAndPwd(id, paw, userType);
-            
-            if (user != null && userType == 0)
+            int user_id = int.Parse(IdTextBox.Text);
+            string password = PasswordBox.Password;
+            int user_type = ComboBox.SelectedIndex;
+            GlobalData.findUserType = user_type;
+            GlobalData.findUserId = user_id;
+
+            var response = await httpClient.GetAsync($"GetUserByUser_idPasswordAndUser_type/{user_id}/{password}/{user_type}");
+            response.EnsureSuccessStatusCode();
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Response res = JsonConvert.DeserializeObject<Response>(responseContent);
+
+            //UserInfoModel user =  userService.getUserByIdAndPwd(id, paw, userType);
+            if (res.userInfoModel != null && user_type == 0)
             {
                 MessageBox.Show("Login Successful");
                
@@ -60,7 +62,7 @@ namespace TicketBookingSystemWPF.View
                 customerView.Show(); 
                 this.Hide();
             }
-            else if(user != null && userType == 1)
+            else if(res.userInfoModel != null && user_type == 1)
             {
                 MessageBox.Show("Login successfful");
                 

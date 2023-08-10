@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5wFrU1dWjsfLN9gGxj5wbciExZDJ5iEHUab8PBw6eBc=",
+  "Source": "TicketBookingREST",
+  "BasePath": "_content/TicketBookingREST",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
