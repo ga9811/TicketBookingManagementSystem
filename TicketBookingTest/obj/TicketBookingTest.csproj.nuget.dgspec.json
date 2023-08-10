@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingTest\\TicketBookingTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Bing Yan\\Desktop\\adesk application\\lab1\\lab1\\BankCharge\\BankCharge\\BankCharge.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\lab1\\lab1\\BankCharge\\BankCharge\\BankCharge.csproj",
+        "projectName": "BankCharge",
+        "projectPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\lab1\\lab1\\BankCharge\\BankCharge\\BankCharge.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingSystemWPF\\TicketBookingSystemWPF.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingSystemWPF\\TicketBookingSystemWPF.csproj",
+        "projectName": "TicketBookingSystemWPF",
+        "projectPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingSystemWPF\\TicketBookingSystemWPF.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingTest\\TicketBookingTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingTest\\TicketBookingTest.csproj",
+        "projectName": "TicketBookingTest",
+        "projectPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingTest\\TicketBookingTest.csproj",
+        "packagesPath": "C:\\Users\\Bing Yan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bing Yan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Bing Yan\\Desktop\\adesk application\\lab1\\lab1\\BankCharge\\BankCharge\\BankCharge.csproj": {
+                "projectPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\lab1\\lab1\\BankCharge\\BankCharge\\BankCharge.csproj"
+              },
+              "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingSystemWPF\\TicketBookingSystemWPF.csproj": {
+                "projectPath": "C:\\Users\\Bing Yan\\Desktop\\adesk application\\project\\TicketBookingSystemWPF\\TicketBookingSystemWPF\\TicketBookingSystemWPF.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoFixture.NUnit3": {
+              "target": "Package",
+              "version": "[4.18.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "Moq.AutoMock": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.2, )"
+            },
+            "NUnit.ConsoleRunner": {
+              "target": "Package",
+              "version": "[3.16.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "NuGet.Frameworks": {
+              "target": "Package",
+              "version": "[6.6.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
